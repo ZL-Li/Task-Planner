@@ -1,5 +1,15 @@
 # Task-Planner
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Implementation](#implementation)
+  - [Possible Input](#possible-input)
+  - [Cost](#cost)
+  - [Heuristic](#heuristic)
+- [Sample Input](#sample-input)
+- [Sample Output](#sample-output)
+
 ## Introduction
 
 This project concerns developing optimal solutions to planning problems for complex tasks inspired by the scenario of building a house, which requires a range of basic tasks to be performed, sometimes in sequence, sometimes in parallel, but where there are constraints between the tasks. We can assume that any number of basic tasks can be scheduled at the same time, provided all the constraints between all the tasks are satisfied. The objective is to develop a plan to finish each of the basic tasks as early as possible.
@@ -18,7 +28,7 @@ We use the Python code for generic search algorithms in [searchGeneric.py](/sear
 
 We use the Python code in [cspProblem.py](/cspProblem.py), which defines a CSP with variables, domains and constraints. We add costs to CSPs by extending this class to include a cost and a heuristic function h to calculate the cost. We also use the code in [cspConsistency.py](/cspConsistency.py). This code implements the transitions in the state space necessary to solve the CSP. The code includes a class Search with AC from CSP that calls a method for domain splitting. Every time a CSP problem is split, the resulting CSPs are made arc consistent (if possible). Rather than extending this class, we prefer to write a new class Search with AC from Cost CSP that has the same methods but works with over constraint optimization problems. This involves just adding costs into the relevant methods, and modifying the constructor to calculate the cost by calculating h whenever a new CSP is created.
 
-Run the code by typing
+Run the code by typing:
 
 ```
 python3 taskPlanner.py input.txt > output.txt
@@ -66,6 +76,7 @@ of the task.
 The heuristic estimates the cost of the best possible solution reachable from a given state $S$ by assuming each variable can be assigned a value that minimizes the end day of the task. The heuristic function sums these minimal costs over the set of all variables, similar to calculating the cost of a solution cost($S$). Let S be a CSP with variables $V$ and let the domain of $v$, written $dom(v)$, be a set of start days for $v$. Then, where the sum is over all variables $v \in V$ representing a task with duration $d_v$ as above:
 
 \[h(S) = \sum_{v \in V} min_{s_v \in dom(v)}(s_v + d_v - 1)\]
+
 ## Sample Input
 
 All input will be a sequence of lines defining a number of tasks, binary constraints and domain constraints, in that order. Comment lines (starting with a ‘#’ character) may also appear in the file. All input files can be assumed to be of the correct format.
