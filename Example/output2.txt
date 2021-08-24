@@ -1,0 +1,8 @@
+wall1:0
+wall2:10
+wall3:0
+wall4:1
+wall5:10
+wall6:16
+wall7:20
+cost:135

@@ -1,0 +1,4 @@
+wall1:0
+wall2:0
+wall3:0
+cost:32

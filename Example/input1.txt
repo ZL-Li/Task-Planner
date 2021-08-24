@@ -1,0 +1,20 @@
+# test for binary constraints
+
+task wall1 20
+task wall2 10
+task wall3 5
+task wall4 10
+task wall5 10
+task wall6 15
+task wall7 15
+task wall8 20
+
+# binary constraints
+constraint wall1 before wall2
+constraint wall2 after wall3
+constraint wall3 starts wall4
+constraint wall4 ends wall5
+constraint wall5 meets wall6
+constraint wall6 overlaps wall7
+constraint wall7 during wall8
+constraint wall8 equals wall1

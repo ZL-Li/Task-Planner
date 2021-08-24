@@ -1,0 +1,10 @@
+# test for No solutions
+
+task wall1 20
+task wall2 10
+task wall3 15
+
+# binary constraints
+constraint wall1 before wall2
+constraint wall3 after wall2
+constraint wall1 equals wall3

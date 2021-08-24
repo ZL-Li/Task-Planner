@@ -1,0 +1,9 @@
+# test for No constraints
+
+task wall1 20
+task wall2 10
+task wall3 5
+
+# binary constraints
+
+# domain constraints

@@ -1,0 +1,18 @@
+# test for unary constraints
+
+task wall1 20
+task wall2 10
+task wall3 5
+task wall4 10
+task wall5 10
+task wall6 15
+task wall7 15
+
+# binary constraints
+domain wall1 starts-before 10
+domain wall2 starts-after 10
+domain wall3 ends-before 10
+domain wall4 ends-after 10
+domain wall5 starts-in 10 20
+domain wall6 ends-in 30 35
+domain wall7 between 20 40 
