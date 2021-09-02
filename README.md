@@ -75,7 +75,7 @@ To define the cost of a solution, simply sum over the end days of all the tasks 
 
 ### Heuristic
 
-In this project, we implement greedy search using a priority queue to order nodes based on a heuristic function $h$. This function must take an arbitrary CSP and return an estimate of the distance from any state $S$ to a solution. So, in contrast to a solution, each variable $v$ is associated with a set of possible values (the current domain), which here we take as the possible start days
+In this project, we implement greedy search using a priority queue to order nodes based on a heuristic function _h_. This function must take an arbitrary CSP and return an estimate of the distance from any state _S_ to a solution. So, in contrast to a solution, each variable _v_ is associated with a set of possible values (the current domain), which here we take as the possible start days
 of the task.
 
 The heuristic estimates the cost of the best possible solution reachable from a given state _S_ by assuming each variable can be assigned a value that minimizes the end day of the task. The heuristic function sums these minimal costs over the set of all variables, similar to calculating the cost of a solution cost(_S_). Let _S_ be a CSP with variables _V_ and let the domain of _v_, written _dom(v)_, be a set of start days for _v_. Then, where the sum is over all variables _v_ in _V_ representing a task with duration _dv_ as above:
