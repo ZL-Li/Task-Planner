@@ -64,18 +64,28 @@ domain <t> between <d1> <d2>    # t starts and finishes in the range [d1,d2]
 
 ### Cost
 
-To define the cost of a solution, simply sum over the end days of all the tasks in the plan. The end day of a task is the start day of the task assigned in the solution plus the given duration of the task, minus 1. More formally, let $V$ be the set of variables (representing tasks) in the CSP and let $s_v$ be the start day of a task $v$, which has duration $d_v$, in a solution $S$. Then:
+To define the cost of a solution, simply sum over the end days of all the tasks in the plan. The end day of a task is the start day of the task assigned in the solution plus the given duration of the task, minus 1. More formally, let _V_ be the set of variables (representing tasks) in the CSP and let _sv_ be the start day of a task _v_, which has duration _dv_, in a solution _S_. Then:
 
-\[cost(S) = \sum_{v \in V}(s_v+d_v-1)\]
+<!-- \[cost(S) = \sum_{v \in V}(s_v+d_v-1)\] -->
+
+<div align=center>
+
+![](http://latex.codecogs.com/gif.latex?cost(S)%20=%20\sum_{v%20\in%20V}(s_v+d_v-1))
+</div>
 
 ### Heuristic
 
 In this project, we implement greedy search using a priority queue to order nodes based on a heuristic function $h$. This function must take an arbitrary CSP and return an estimate of the distance from any state $S$ to a solution. So, in contrast to a solution, each variable $v$ is associated with a set of possible values (the current domain), which here we take as the possible start days
 of the task.
 
-The heuristic estimates the cost of the best possible solution reachable from a given state $S$ by assuming each variable can be assigned a value that minimizes the end day of the task. The heuristic function sums these minimal costs over the set of all variables, similar to calculating the cost of a solution cost($S$). Let S be a CSP with variables $V$ and let the domain of $v$, written $dom(v)$, be a set of start days for $v$. Then, where the sum is over all variables $v \in V$ representing a task with duration $d_v$ as above:
+The heuristic estimates the cost of the best possible solution reachable from a given state _S_ by assuming each variable can be assigned a value that minimizes the end day of the task. The heuristic function sums these minimal costs over the set of all variables, similar to calculating the cost of a solution cost(_S_). Let _S_ be a CSP with variables _V_ and let the domain of _v_, written _dom(v)_, be a set of start days for _v_. Then, where the sum is over all variables _v_ in _V_ representing a task with duration _dv_ as above:
 
-\[h(S) = \sum_{v \in V} min_{s_v \in dom(v)}(s_v + d_v - 1)\]
+<!-- \[h(S) = \sum_{v \in V} min_{s_v \in dom(v)}(s_v + d_v - 1)\] -->
+
+<div align=center>
+
+![](http://latex.codecogs.com/gif.latex?h(S)%20=%20\sum_{v%20\in%20V}%20min_{s_v%20\in%20dom(v)}(s_v%20+%20d_v%20-%201))
+</div>
 
 ## Sample Input
 
